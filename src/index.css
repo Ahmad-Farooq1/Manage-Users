@@ -1,0 +1,29 @@
+@import "tailwindcss";
+.Mainbg-color {
+  background-color: #051e88;
+}
+.side-barbg {
+  background-color: #f7f9fb;
+}
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+.bg-userTable {
+  background-color: #e7e7ff;
+}
+.font-main {
+  color: #051e88;
+}
+.bg-upload {
+  background-color: #f5f5f5;
+}
+.table-font-color{
+  color: #333333;
+
+}
+.btn-cancel{
+  background-color: #898989;
+}
