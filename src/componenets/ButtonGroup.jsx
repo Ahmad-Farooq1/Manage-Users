@@ -28,25 +28,28 @@ const ButtonGroup = () => {
       <div>
         <div className="relative z-0 -mb-2">
           <div className="flex flex-row justify-between flex-wrap items-center">
-            <div className="flex flex-wrap mt-3 mb-0">
-              {buttons.map((btn) => (
-                <ButtonTable
-                  key={btn.id}
-                  id={btn.id}
-                  label={btn.label}
-                  activeButton={activeButton}
-                  setActiveButton={setActiveButton}
-                />
-              ))}
+            <div className="mt-3 mb-2 overflow-x-auto overflow-y-hidden whitespace-nowrap no-scrollbar">
+              <div className="flex flex-nowrap pr-1 -mb-1">
+                {buttons.map((btn) => (
+                  <ButtonTable
+                    key={btn.id}
+                    id={btn.id}
+                    label={btn.label}
+                    activeButton={activeButton}
+                    setActiveButton={setActiveButton}
+                  />
+                ))}
+              </div>
             </div>
+
             <div className="flex flex-row justify-between">
               <div
                 onClick={() => setShowCalendar(true)}
-                className="absolute md:-top-1 -top-7 bg-gray-100 rounded-lg mr-3 right-18 z-50 font-sans text-xs font-normal text-white h-[24px] w-[30px]  cursor-pointer flex flex-row justify-center items-center gap-1"
+                className="absolute md:-top-3 lg:top-2 -top-7 bg-gray-100 rounded-lg mr-3 right-18 z-50 font-sans text-xs font-normal text-white h-[24px] w-[30px]  cursor-pointer flex flex-row justify-center items-center gap-1"
               >
                 <img src="/calendar.svg" alt="Calendar Icon" />
               </div>
-              <button className="absolute md:-top-1 -top-7 right-5 z-50 Mainbg-color font-sans text-xs font-normal text-white h-[24px] w-[55px] rounded-md cursor-pointer flex flex-row justify-center items-center gap-1">
+              <button className="absolute md:-top-3 lg:top-2 -top-7 right-5 z-50 Mainbg-color font-sans text-xs font-normal text-white h-[24px] w-[55px] rounded-md cursor-pointer flex flex-row justify-center items-center gap-1">
                 + Add
               </button>
             </div>
@@ -64,7 +67,6 @@ const ButtonGroup = () => {
         </div>
       </div>
 
-     
       {showCalendar && <CalendarPopup onClose={() => setShowCalendar(false)} />}
     </>
   );

@@ -56,7 +56,7 @@ const CentralPartTwo = () => {
           </div>
         </div>
       </div>
-      <div className="relative w-[97%] pb-10 sm:pb-0 h-[90%] top-[26px] left-[20px] bg-white">
+      <div className="relative w-[97%] pb-15 sm:pb-0 h-[90%] top-[26px] left-[20px] bg-white ">
         <ButtonGroup />
       </div>
     </>

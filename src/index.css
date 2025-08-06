@@ -44,3 +44,11 @@
 .btn-delete {
   background-color: #f11a47;
 }
+/* Add to global CSS or Tailwind config */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
