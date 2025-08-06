@@ -5,14 +5,19 @@ const CentralPart = () => {
   return (
     <>
       <div className="w-[95vw] sm:w-[100%] h-[100%] mt-5 space-y-3">
-        <div className="relative left-[20px] h-10 flex flex-row justify-start items-center">
-          <div className="flex items-center justify-center">
-            <img src="/arrow.png" alt="" className="h-[16px] w-[22px]" />
+        <div className="relative left-[20px] h-8 flex flex-row justify-between items-center">
+          <div className="flex flex-row justify-start gap-1">
+            <div className="flex items-center justify-center">
+              <img src="/arrow.svg" alt="" className="h-[20px] w-[23px]" />
+            </div>
+            <div className="flex items-center justify-center">
+              <p className="font-roboto font-bold text-md leading-[100%] tracking-[0px]">
+                &nbsp;XYZ Ireland Ltd
+              </p>
+            </div>
           </div>
           <div>
-            <p className="font-roboto font-bold text-[20px] leading-[100%] tracking-[0px]">
-              &nbsp;Upload CSV File
-            </p>
+            <img src="/Frame.svg" alt="" className="h-[90px] w-[90px] mr-5 md:mr-7 2xl:mr-10" />
           </div>
         </div>
 

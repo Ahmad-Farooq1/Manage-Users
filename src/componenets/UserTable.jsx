@@ -1,16 +1,66 @@
 import React from "react";
 
 const UserTable = () => {
+  const users = [
+    {
+      name: "Silver",
+      company: "Laptop",
+      email: "Laptop",
+      title: "Laptop",
+      role: "Laptop",
+      userType: "$2999",
+    },
+    {
+      name: "White",
+      company: "Laptop PC",
+      email: "Laptop PC",
+      title: "Laptop PC",
+      role: "Laptop PC",
+      userType: "$1999",
+    },
+    {
+      name: "White",
+      company: "Laptop PC",
+      email: "Laptop PC",
+      title: "Laptop PC",
+      role: "Laptop PC",
+      userType: "$1999",
+    },
+    {
+      name: "White",
+      company: "Laptop PC",
+      email: "Laptop PC",
+      title: "Laptop PC",
+      role: "Laptop PC",
+      userType: "$1999",
+    },
+    {
+      name: "White",
+      company: "Laptop PC",
+      email: "Laptop PC",
+      title: "Laptop PC",
+      role: "Laptop PC",
+      userType: "$1999",
+    },
+    {
+      name: "White",
+      company: "Laptop PC",
+      email: "Laptop PC",
+      title: "Laptop PC",
+      role: "Laptop PC",
+      userType: "$1999",
+    },
+  ];
+
   return (
-    <div className="flex items-center justify-center p-4">
+    <div className="flex items-center justify-center ">
       {/* Outer card */}
-      <div className="w-full max-w-[98.5%] mb-5 bg-white rounded-lg shadow-md overflow-hidden flex flex-wrap justify-center">
-        
-        <div className="overflow-x-auto  w-[98%] pt-4">
+      <div className="w-full mb-5 side-barbg rounded-lg  overflow-hidden flex flex-wrap justify-center">
+        <div className="overflow-x-auto w-[98.5%] pt-3">
           <table className="w-full text-sm text-left text-gray-500">
             <thead className="bg-userTable text-xs text-gray-700 uppercase">
               <tr className="rounded-lg ">
-                <th className="px-6 py-3  rounded-l-lg">Name</th>
+                <th className="px-6 py-3 rounded-l-lg">Name</th>
                 <th className="px-6 py-3">Company Name</th>
                 <th className="px-6 py-3">Email Address</th>
                 <th className="px-6 py-3">Title</th>
@@ -19,55 +69,17 @@ const UserTable = () => {
               </tr>
             </thead>
 
-            <tbody className="divide-y table-font-color divide-gray-200 bg-white">
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4">Silver</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">$2999</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4">White</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">$1999</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4">White</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">$1999</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4">White</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">$1999</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4">White</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">$1999</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4">White</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">$1999</td>
-              </tr>
+            <tbody className="divide-y table-font-color divide-gray-200 side-barbg">
+              {users.map((user, index) => (
+                <tr key={index} className="hover:bg-gray-50">
+                  <td className="px-6 py-4">{user.name}</td>
+                  <td className="px-6 py-4">{user.company}</td>
+                  <td className="px-6 py-4">{user.email}</td>
+                  <td className="px-6 py-4">{user.title}</td>
+                  <td className="px-6 py-4">{user.role}</td>
+                  <td className="px-6 py-4">{user.userType}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

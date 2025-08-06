@@ -6,9 +6,9 @@ const NavBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   };
 
   return (
-    <div className="h-[80px] w-[100%] Mainbg-color flex flex-row">
+    <div className="h-[62.5px] w-[100%] Mainbg-color flex flex-row">
       <div className="flex items-center justify-start h-full w-full">
-        <div className="w-[20px] h-[80px]"></div>
+        <div className="w-[20px] h-[62.5px]"></div>
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
@@ -34,7 +34,7 @@ const NavBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         </button>
         <div className="sm:hidden w-[20px] h-[80px]"></div>
         <div className="flex justify-between w-full">
-          <p className="font-roboto font-semibold text-[20px] sm:font-bold sm:text-[26px] text-white">
+          <p className="font-roboto font-semibold text-[20px] sm:font-bold sm:text-[22px] text-white">
             Manage Users
           </p>
           <div className="flex justify-end">
@@ -46,7 +46,7 @@ const NavBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               />
             </div>
             <div className="flex items-center">
-              <p className="font-inter font-base text-base text-white">
+              <p className="font-inter font-base text-sm text-white">
                 james@gmail.com
               </p>
             </div>

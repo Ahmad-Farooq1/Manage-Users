@@ -3,7 +3,7 @@ import OtherSideBarHover from "./OtherSideBarHover";
 import SideBarlast from "./SideBarlast";
 
 const SideBar = ({ isSidebarOpen, onClick }) => {
-  const [activeItem, setActiveItem] = useState("Manage Users");
+  const [activeItem, setActiveItem] = useState("Manage Companies");
   const [isMobile, setIsMobile] = useState(false);
   const sidebarRef = useRef(null);
 
@@ -56,14 +56,14 @@ const SideBar = ({ isSidebarOpen, onClick }) => {
       >
         <div
           className={`flex flex-col overflow-hidden ${
-            isSidebarOpen ? "w-[260px]" : "w-0"
+            isSidebarOpen ? "w-[210px]" : "w-0"
           }`}
         >
           <div className="flex items-center Mainbg-color justify-start w-[260px] relative">
-            <div className="w-[18px] h-[80px]"></div>
-            <div className="flex justify-between w-[260px]">
-              <img src="/logo.svg" alt="logo" />
-              <div className="bg-white w-[0.5px] h-[80px]" />
+            <div className="w-[18px] h-[62.5px]"></div>
+            <div className="flex justify-between items-center w-[190px]">
+              <img src="/logo.svg" alt="logo" className="w-[50px] h-[50px]"/>
+              <div className="bg-white w-[0.5px] h-[62.5px]" />
             </div>
 
             {isMobile && (
@@ -76,7 +76,7 @@ const SideBar = ({ isSidebarOpen, onClick }) => {
             )}
           </div>
 
-          <div className="h-[88vh] sm:h-[150vw] md:h-[120vw] lg:h-[130vw] xl:h-[150vh]  min-w-[261px] side-barbg relative">
+          <div className="h-[88vh] sm:h-[150vw] md:h-[120vw] lg:h-[130vw] xl:h-[150vh]  max-w-[208px] side-barbg relative">
             <div className="my-5 mx-4">
               <OtherSideBarHover
                 textf="Dashboard"
@@ -106,15 +106,15 @@ const SideBar = ({ isSidebarOpen, onClick }) => {
               />
             </div>
 
-            <div className="absolute top-[500px] sm:top-[621px] left-4 right-4">
+            <div className="absolute top-[350px] sm:top-[500px] left-4 right-4">
               <OtherSideBarHover
                 textf="Logout"
                 image="/logout.svg"
                 isActive={activeItem === "Logout"}
                 onClick={() => setActiveItem("Logout")}
               />
-              <div className="flex flex-col font-inter table-font-color text-xs justify-center text-center">
-                <div className="py-3 sm:py-3 sm:mt-25">
+              <div className="flex flex-col font-inter table-font-color text-[10px] justify-center text-center">
+                <div className="py-3 sm:py-3 sm:mt-15">
                   <p>Version: 2.0.1</p>
                 </div>
                 <div>
@@ -130,14 +130,16 @@ const SideBar = ({ isSidebarOpen, onClick }) => {
 
         {!isMobile && (
           <div
-            className="absolute top-[66px] cursor-pointer -right-4"
+            className={`absolute top-[53px] cursor-pointer  ${
+            isSidebarOpen ? "-right-2" : "-right-4"
+          }`}
             onClick={onClick}
           >
-            <div className="hidden sm:flex bg-black h-[26px] w-[26px] rounded-3xl justify-center items-center">
+            <div className="hidden sm:flex bg-black h-[20px] w-[20px] rounded-3xl justify-center items-center">
               <img
                 src={"/left.svg"}
                 alt="Toggle"
-                className={`h-[10px] w-[6px] ${
+                className={`h-[8px] w-[6px] ${
                   isSidebarOpen ? "rotate-0" : "rotate-180"
                 }`}
               />
