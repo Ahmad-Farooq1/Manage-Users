@@ -2,12 +2,13 @@ import React from "react";
 import DragNDrop from "./DragNDrop";
 import ButtonTable from "./ButtonTable";
 import ButtonGroup from "./ButtonGroup";
+import AddToTable from "./AddToTable";
 
-const CentralPartTwo = () => {
+const CentralPartTwo = ({ onAddClick, onEditClick, documents }) => {
   return (
     <>
-      <div className="bg-userTable2 w-[97%]  mx-5 rounded-lg">
-        <div className="flex flex-col justify-between h-full px-5 py-4 ">
+      <div className="bg-userTable2 w-[97%] mx-5 rounded-lg">
+        <div className="flex flex-col justify-between h-full px-5 py-4">
           <div className="flex flex-row justify-between h-[34px]">
             <p className="font-bold font-roboto text-sm font-heading">
               Company Details
@@ -57,7 +58,11 @@ const CentralPartTwo = () => {
         </div>
       </div>
       <div className="relative w-[97%] pb-15 sm:pb-0 h-[90%] top-[26px] left-[20px] bg-white ">
-        <ButtonGroup />
+        <ButtonGroup
+          onAddClick={onAddClick}
+          onEditClick={onEditClick}
+          documents={documents} // Pass documents to ButtonGroup
+        />
       </div>
     </>
   );

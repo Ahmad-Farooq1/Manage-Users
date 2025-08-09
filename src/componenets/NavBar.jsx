@@ -6,7 +6,7 @@ const NavBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   };
 
   return (
-    <div className="h-[62.5px] w-[100%] Mainbg-color flex flex-row">
+    <div className="h-[62.5px] w-[100%] Mainbg-color flex flex-row z-[99]">
       <div className="flex items-center justify-start h-full w-full">
         <div className="w-[20px] h-[62.5px]"></div>
         <button

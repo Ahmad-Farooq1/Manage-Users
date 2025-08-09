@@ -9,7 +9,7 @@ import TableSix from "./TableSix";
 import TableSeven from "./TableSeven";
 import CalendarPopup from "./CalendarPopup";
 
-const ButtonGroup = () => {
+const ButtonGroup = ({ onAddClick, onEditClick, documents }) => {
   const [activeButton, setActiveButton] = useState("tax");
   const [showCalendar, setShowCalendar] = useState(false);
 
@@ -28,8 +28,8 @@ const ButtonGroup = () => {
       <div>
         <div className="relative z-0 -mb-2">
           <div className="flex flex-row justify-between flex-wrap items-center">
-            <div className="mt-3 mb-2 overflow-x-auto overflow-y-hidden whitespace-nowrap no-scrollbar">
-              <div className="flex flex-nowrap pr-1 -mb-1">
+            <div className="mt-3 mb-2 overflow-x-auto whitespace-nowrap no-scrollbar">
+              <div className="flex flex-nowrap pr-1 -mb-2">
                 {buttons.map((btn) => (
                   <ButtonTable
                     key={btn.id}
@@ -45,11 +45,15 @@ const ButtonGroup = () => {
             <div className="flex flex-row justify-between">
               <div
                 onClick={() => setShowCalendar(true)}
-                className="absolute md:-top-3 lg:top-2 -top-7 bg-gray-100 rounded-lg mr-3 right-18 z-50 font-sans text-xs font-normal text-white h-[24px] w-[30px]  cursor-pointer flex flex-row justify-center items-center gap-1"
+                className="absolute md:-top-3 lg:top-2 -top-7 bg-gray-100 rounded-lg mr-3 right-18 z-50 font-sans text-xs font-normal text-white h-[24px] w-[30px] cursor-pointer flex flex-row justify-center items-center gap-1"
               >
                 <img src="/calendar.svg" alt="Calendar Icon" />
               </div>
-              <button className="absolute md:-top-3 lg:top-2 -top-7 right-5 z-50 Mainbg-color font-sans text-xs font-normal text-white h-[24px] w-[55px] rounded-md cursor-pointer flex flex-row justify-center items-center gap-1">
+
+              <button
+                onClick={onAddClick}
+                className="absolute md:-top-3 lg:top-2 -top-7 right-5 z-50 Mainbg-color font-sans text-xs font-normal text-white h-[24px] w-[55px] rounded-md cursor-pointer flex flex-row justify-center items-center gap-1"
+              >
                 + Add
               </button>
             </div>
@@ -57,13 +61,15 @@ const ButtonGroup = () => {
         </div>
 
         <div className="relative z-10">
-          {activeButton === "anl" && <UserTable />}
-          {activeButton === "tax" && <TableTwo />}
-          {activeButton === "bdgt" && <TableThree />}
-          {activeButton === "bm" && <TableFour />}
-          {activeButton === "cmp" && <TableFive />}
-          {activeButton === "sox" && <TableSix />}
-          {activeButton === "ud" && <TableSeven />}
+          {activeButton === "anl" && <UserTable onEditClick={onEditClick} />}
+          {activeButton === "tax" && (
+            <TableTwo onEditClick={onEditClick} documents={documents} />
+          )}
+          {activeButton === "bdgt" && <TableThree onEditClick={onEditClick} />}
+          {activeButton === "bm" && <TableFour onEditClick={onEditClick} />}
+          {activeButton === "cmp" && <TableFive onEditClick={onEditClick} />}
+          {activeButton === "sox" && <TableSix onEditClick={onEditClick} />}
+          {activeButton === "ud" && <TableSeven onEditClick={onEditClick} />}
         </div>
       </div>
 
