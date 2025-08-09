@@ -4,7 +4,7 @@ import ButtonTable from "./ButtonTable";
 import ButtonGroup from "./ButtonGroup";
 import AddToTable from "./AddToTable";
 
-const CentralPartTwo = ({ onAddClick, onEditClick, documents }) => {
+const CentralPartTwo = ({ onAddClick, onEditClick, documents ,setDocuments}) => {
   return (
     <>
       <div className="bg-userTable2 w-[97%] mx-5 rounded-lg">
@@ -58,11 +58,12 @@ const CentralPartTwo = ({ onAddClick, onEditClick, documents }) => {
         </div>
       </div>
       <div className="relative w-[97%] pb-15 sm:pb-0 h-[90%] top-[26px] left-[20px] bg-white ">
-        <ButtonGroup
-          onAddClick={onAddClick}
-          onEditClick={onEditClick}
-          documents={documents} // Pass documents to ButtonGroup
-        />
+     <ButtonGroup
+  onAddClick={onAddClick}
+  onEditClick={onEditClick}
+  documents={documents}
+  setDocuments={setDocuments}
+/>
       </div>
     </>
   );

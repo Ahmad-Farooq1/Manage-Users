@@ -2,7 +2,7 @@ import React from "react";
 import CentralPartTwo from "./CentralPartTwo";
 import AddToTable from "./AddToTable";
 
-const CentralPart = ({ onAddClick, onEditClick, documents }) => {
+const CentralPart = ({ onAddClick, onEditClick, documents ,setDocuments}) => {
   return (
     <>
       <div className="w-[95vw] sm:w-[100%] h-[100%] mt-5 space-y-3 flex flex-wrap">
@@ -26,11 +26,12 @@ const CentralPart = ({ onAddClick, onEditClick, documents }) => {
           </div>
         </div>
 
-        <CentralPartTwo
-          onAddClick={onAddClick}
-          onEditClick={onEditClick}
-          documents={documents} // Pass documents to CentralPartTwo
-        />
+       <CentralPartTwo
+  onAddClick={onAddClick}
+  onEditClick={onEditClick}
+  documents={documents}
+  setDocuments={setDocuments}
+/>
       </div>
     </>
   );

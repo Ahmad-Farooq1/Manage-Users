@@ -9,7 +9,7 @@ import TableSix from "./TableSix";
 import TableSeven from "./TableSeven";
 import CalendarPopup from "./CalendarPopup";
 
-const ButtonGroup = ({ onAddClick, onEditClick, documents }) => {
+const ButtonGroup = ({ onAddClick, onEditClick, documents,setDocuments }) => {
   const [activeButton, setActiveButton] = useState("tax");
   const [showCalendar, setShowCalendar] = useState(false);
 
@@ -62,9 +62,13 @@ const ButtonGroup = ({ onAddClick, onEditClick, documents }) => {
 
         <div className="relative z-10">
           {activeButton === "anl" && <UserTable onEditClick={onEditClick} />}
-          {activeButton === "tax" && (
-            <TableTwo onEditClick={onEditClick} documents={documents} />
-          )}
+         {activeButton === "tax" && (
+  <TableTwo
+    onEditClick={onEditClick}
+    documents={documents}
+    setDocuments={setDocuments}
+  />
+)}
           {activeButton === "bdgt" && <TableThree onEditClick={onEditClick} />}
           {activeButton === "bm" && <TableFour onEditClick={onEditClick} />}
           {activeButton === "cmp" && <TableFive onEditClick={onEditClick} />}

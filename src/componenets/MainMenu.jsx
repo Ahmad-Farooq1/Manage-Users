@@ -96,11 +96,12 @@ const MainMenu = () => {
           />
         )}
         {/* {isSidebarOpen && <SideBar />} */}
-        <CentralPart
-          onAddClick={handleAddClick}
-          onEditClick={handleEditClick}
-          documents={documents} // Pass documents to CentralPart
-        />
+       <CentralPart
+  onAddClick={handleAddClick}
+  onEditClick={handleEditClick}
+  documents={documents}
+  setDocuments={setDocuments}
+/>
       </div>
     </>
   );

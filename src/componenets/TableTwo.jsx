@@ -7,7 +7,10 @@ const TableTwo = ({ onEditClick, documents, setDocuments }) => {
 
   const handleDeleteDocument = (documentId) => {
     if (window.confirm("Are you sure you want to delete this document?")) {
-      setDocuments((prev) => prev.filter((doc) => doc.id !== documentId));
+      setDocuments((prev) => {
+        const updatedDocuments = prev.filter((doc) => doc.id !== documentId);
+        return updatedDocuments;
+      });
     }
   };
 
